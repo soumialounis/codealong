@@ -14,6 +14,13 @@ article {
 :root {
     --min-width: 15rem;
     --header-height: 3rem;
+
+    --large-padding: 1rem;
+
+    --text: white;
+    --background: blue;
+    --logo-button: rgba(200, 10, 10, 0.7);
+    --background-fade: rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -34,6 +41,8 @@ body {
     margin: 0 auto;
     display: grid;
     grid-template-rows: var(--header-height) auto var(--header-height);
+    color: var(--text);
+    background-color: var(--background);
 }
 
 body>main {
@@ -53,4 +62,43 @@ body>main {
 
 body>footer {
     grid-row: 3;
+}
+
+
+body>header,
+body>footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    padding: var(--large-padding);
+}
+
+body>footer {
+    justify-content: center;
+}
+
+a,
+a:hover,
+a:visited {
+    color: var(--text);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+body>header>a {
+    background-color: var(--logo-button);
+    height: calc(var(--header-height) / 2);
+    padding: var(--large-padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body>header,
+body>footer {
+    background-color: var(--background-fade);
 }
